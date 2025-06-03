@@ -3,6 +3,11 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
+var myjson = {
+  name: "jaiwanth",
+  age: 20,
+};
+
 app.get("/", (req, res) => {
   res.send("Hello World");
 });
@@ -17,6 +22,10 @@ app.get("/login", (req, res) => {
 
 app.get("/youtube", (req, res) => {
   res.send("<h2>Chai aur Code</h2>");
+});
+
+app.get("/json_data", (req, res) => {
+  res.json(myjson);
 });
 
 app.listen(process.env.PORT, () => {
